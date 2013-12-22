@@ -224,8 +224,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2.55999994, y: 2.55999994}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 2.55999994, y: 2.26999998}
+  m_Center: {x: 0, y: -.129999995}
 --- !u!212 &465229853
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -454,8 +454,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2.55999994, y: 2.55999994}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 2.55999994, y: 2.26999998}
+  m_Center: {x: 0, y: -.129999995}
 --- !u!212 &1010500583
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -516,8 +516,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2.55999994, y: 2.55999994}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 2.55999994, y: 2.28999996}
+  m_Center: {x: 0, y: -.100000001}
 --- !u!212 &1164930872
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -672,8 +672,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2.55999994, y: 2.55999994}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 2.55999994, y: 2.28999996}
+  m_Center: {x: 0, y: -.100000001}
 --- !u!212 &1475401357
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -734,8 +734,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2.55999994, y: 2.55999994}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 2.55999994, y: 2.26999998}
+  m_Center: {x: 0, y: -.129999995}
 --- !u!212 &1570199369
 SpriteRenderer:
   m_ObjectHideFlags: 0
