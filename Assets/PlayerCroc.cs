@@ -44,6 +44,7 @@ public class PlayerCroc : MonoBehaviour
 
 				if (Input.GetKey (moveRight)) {
 						rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
+			transform.localScale = new Vector2(-transform.localScale.x,transform.localScale.y);
 				} else if (Input.GetKey (moveLeft)) {
 						rigidbody2D.velocity = new Vector2 (speed * -1, rigidbody2D.velocity.y);
 				} else {
