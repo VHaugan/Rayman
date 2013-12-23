@@ -5,13 +5,15 @@ public class PlayerCroc : MonoBehaviour
 {
 		void Start ()
 		{
-		print("hi");
+				print ("hi");
 		}
 
 		public KeyCode moveUp;
 		public KeyCode moveDown;
 		public KeyCode moveLeft;
 		public KeyCode moveRight;
+		private bool movingLeft = true;
+		private bool movingRight = false;
 		private bool canJump = false;
 		private bool onGround = false;
 		private bool jumping = false;
@@ -43,20 +45,31 @@ public class PlayerCroc : MonoBehaviour
 				}
 
 				if (Input.GetKey (moveRight)) {
+
 						rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
-			transform.localScale = new Vector2(-transform.localScale.x,transform.localScale.y);
+						if (movingLeft) {
+								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
+								movingRight = true;
+								movingLeft = false;
+						}
 				} else if (Input.GetKey (moveLeft)) {
 						rigidbody2D.velocity = new Vector2 (speed * -1, rigidbody2D.velocity.y);
+						if (movingRight) {
+								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
+								movingRight = false;
+								movingLeft = true;
+						}
 				} else {
 						rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);
 				}
 
 				if (onGround && !Input.GetKey (moveUp)) {
-					canJump = true;
+						canJump = true;
 				}
 		}
 		
-		void OnCollisionEnter2D (Collision2D collision) {
+		void OnCollisionEnter2D (Collision2D collision)
+		{
 				if (collision.gameObject.tag == "Ground") {
 						onGround = true;
 				}
