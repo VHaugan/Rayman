@@ -5,7 +5,6 @@ public class PlayerCroc : MonoBehaviour
 {
 		void Start ()
 		{
-				print ("hi");
 		}
 
 		public KeyCode moveUp;
