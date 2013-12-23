@@ -66,6 +66,9 @@ public class PlayerCroc : MonoBehaviour
 				if (onGround && !Input.GetKey (moveUp)) {
 						canJump = true;
 				}
+				if (rigidbody2D.velocity.y < -10) {
+						rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, -10);
+				}
 		}
 		
 		void OnCollisionEnter2D (Collision2D collision)
