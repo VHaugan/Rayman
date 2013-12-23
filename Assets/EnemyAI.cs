@@ -13,8 +13,8 @@ public class EnemyAI : MonoBehaviour
 
 		void Update ()
 		{
-				//if (onGround)
-				rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
+				if (onGround)
+				rigidbody2D.velocity = new Vector2 (-speed, rigidbody2D.velocity.y);
 				if (rigidbody2D.velocity.y < 0) {
 						onGround = false;
 				}
