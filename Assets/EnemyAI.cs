@@ -8,13 +8,12 @@ public class EnemyAI : MonoBehaviour
 
 		void Start ()
 		{
-				print ("hiihi");
 		}
 
 		void Update ()
 		{
 				if (onGround)
-				rigidbody2D.velocity = new Vector2 (-speed, rigidbody2D.velocity.y);
+						rigidbody2D.velocity = new Vector2 (-speed, rigidbody2D.velocity.y);
 				if (rigidbody2D.velocity.y < 0) {
 						onGround = false;
 				}
@@ -26,5 +25,13 @@ public class EnemyAI : MonoBehaviour
 						onGround = true;
 				}
 		}
-}
 
+		void OnTriggerEnter2D (Collider2D collider)
+		{
+				if (collider.tag == "Reverse") {
+						speed *= -1;
+						transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
+			transform.position = new Vector2 (transform.position.x - 53/100, transform.position.y);
+				}
+		}
+}

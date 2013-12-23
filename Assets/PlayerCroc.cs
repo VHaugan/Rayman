@@ -5,6 +5,7 @@ public class PlayerCroc : MonoBehaviour
 {
 		void Start ()
 		{
+		Physics2D.IgnoreLayerCollision (10,8);
 		}
 
 		public KeyCode moveUp;
