@@ -67,7 +67,12 @@ public class PlayerCroc : MonoBehaviour
 						canJump = true;
 				}
 				if (rigidbody2D.velocity.y < -10) {
-						rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, -10);
+						rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, -10);
+				}
+
+				if (rigidbody2D.velocity.y < 0) {
+						canJump = false;
+						onGround = false;
 				}
 		}
 		
