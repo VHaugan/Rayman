@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 5045bd3996a01a840a99e5c4cfd93c7f
+=======
 guid: 4416d4cf67d513c4f84cf28acb660e41
+>>>>>>> c27a931a05e7b5d80e22970de1620ae1af61576e
 TextureImporter:
   serializedVersion: 2
   mipmaps:
