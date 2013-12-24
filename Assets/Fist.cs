@@ -9,12 +9,14 @@ public class Fist : MonoBehaviour
 		private int punchLimit = 20;
 		private GameObject player;
 		private float initScale;
+		private int dir;
 
 		// Use this for initialization
 		void Start ()
 		{
 				player = GameObject.FindGameObjectWithTag ("Player");
 				initScale = transform.localScale.x;
+				dir = PlayerCroc.dir;
 		}
 	
 		// Update is called once per frame
@@ -26,7 +28,10 @@ public class Fist : MonoBehaviour
 				if (punchTime == punchLimit) {
 						Vector3 delta = player.transform.position - transform.position;
 						delta.Normalize ();
-						//transform.localScale = new Vector2 (-Mathf.Sign (delta.x) * initScale, transform.localScale.y);
+						if (dir != Mathf.Sign(delta.x)) {
+								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
+								dir *= -1;
+						}
 						rigidbody2D.velocity = new Vector2 (25 * delta.x, 25 * delta.y);
 				}
 		}
@@ -35,6 +40,7 @@ public class Fist : MonoBehaviour
 		{
 				punching = true;
 				rigidbody2D.velocity = new Vector2 (PlayerCroc.dir * 20, 0);
+		dir = PlayerCroc.dir;
 		}
 
 		void reset ()
@@ -43,12 +49,14 @@ public class Fist : MonoBehaviour
 				rigidbody2D.velocity = new Vector2 (0, 0);
 				punchTime = 0;
 				punching = false;
+		dir = PlayerCroc.dir;
 		}
 
 		void OnTriggerEnter2D (Collider2D other)
 		{
 				if (other.gameObject.tag != "Player" && other.gameObject.tag != "Reverse") {
 						punchTime = punchLimit;
+			dir *= -1;
 				}
 		}
 
