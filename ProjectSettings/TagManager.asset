@@ -49,3 +49,23 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Ground
+    userID: 3
+    uniqueID: 4266046789
+    locked: 0
+  - name: Cages
+    userID: 6
+    uniqueID: 1955397771
+    locked: 0
+  - name: Detail
+    userID: 4
+    uniqueID: 3339628649
+    locked: 0
+  - name: Mobs
+    userID: 2
+    uniqueID: 4203257119
+    locked: 0
+  - name: Foreground
+    userID: 5
+    uniqueID: 966531401
+    locked: 0
