@@ -3,15 +3,14 @@ using System.Collections;
 
 public class PlayerCroc : MonoBehaviour
 {
-
 		public KeyCode moveUp;
 		public KeyCode moveDown;
 		public KeyCode moveLeft;
 		public KeyCode moveRight;
 		public KeyCode punchKey;
-	private static int LEFT = -1; 
-	private static int RIGHT = 1;
-	public static int dir = LEFT;
+		private static int LEFT = -1;
+		private static int RIGHT = 1;
+		public static int dir = LEFT;
 		private bool canJump = false;
 		private bool onGround = false;
 		private bool jumping = false;
@@ -19,16 +18,17 @@ public class PlayerCroc : MonoBehaviour
 		private int jumpTime = 0;
 		private float speed = 5;
 		private GameObject fist;
+		private float fistCoolDownStart = 0;
+		private bool fistCoolDown = false;
 
 		void Start ()
 		{
 				Physics2D.IgnoreLayerCollision (10, 8);
 				fist = GameObject.FindGameObjectWithTag ("Fist");
 		}
-
-		
-
+	
 		// Update is called once per frame
+
 		void Update ()
 		{
 				if (Input.GetKey (moveUp)) {
@@ -57,14 +57,16 @@ public class PlayerCroc : MonoBehaviour
 						rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
 						if (dir == LEFT) {
 								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
+								fist.SendMessage ("Flip");
 								dir = RIGHT;
 							
 						}
 				} else if (Input.GetKey (moveLeft)) {
 						rigidbody2D.velocity = new Vector2 (speed * -1, rigidbody2D.velocity.y);
 						if (dir == RIGHT) {
+								fist.SendMessage ("Flip");
 								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
-				dir = LEFT;
+								dir = LEFT;
 						}
 				} else {
 						rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);
@@ -82,12 +84,18 @@ public class PlayerCroc : MonoBehaviour
 						onGround = false;
 				}
 
-				if (Input.GetKey (punchKey) && !punching) {
+				if (Input.GetKey (punchKey) && !punching && !fistCoolDown) {
+						fistCoolDownStart = Time.time;
 						fist.SendMessage ("punch");
 						punching = true;
 				}
 				if (!punching) {
 						fist.transform.position = transform.position;
+						if (fistCoolDown) {
+								if (Time.time - fistCoolDownStart > 0.7) {
+										fistCoolDown = false;
+								}
+						}
 				}
 		}
 		
@@ -101,8 +109,9 @@ public class PlayerCroc : MonoBehaviour
 		void OnTriggerEnter2D (Collider2D other)
 		{
 				if (other.gameObject.tag == "Fist" && punching) {
+						fistCoolDown = true;
 						punching = false;
-			fist.SendMessage("reset");
+						fist.SendMessage ("reset");
 				}
 		}
 }
