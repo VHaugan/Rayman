@@ -9,8 +9,9 @@ public class PlayerCroc : MonoBehaviour
 		public KeyCode moveLeft;
 		public KeyCode moveRight;
 		public KeyCode punchKey;
-		private bool movingLeft = true;
-		private bool movingRight = false;
+	private static int LEFT = -1; 
+	private static int RIGHT = 1;
+	public static int dir = LEFT;
 		private bool canJump = false;
 		private bool onGround = false;
 		private bool jumping = false;
@@ -54,17 +55,16 @@ public class PlayerCroc : MonoBehaviour
 				if (Input.GetKey (moveRight)) {
 
 						rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
-						if (movingLeft) {
+						if (dir == LEFT) {
 								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
-								movingRight = true;
-								movingLeft = false;
+								dir = RIGHT;
+							
 						}
 				} else if (Input.GetKey (moveLeft)) {
 						rigidbody2D.velocity = new Vector2 (speed * -1, rigidbody2D.velocity.y);
-						if (movingRight) {
+						if (dir == RIGHT) {
 								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
-								movingRight = false;
-								movingLeft = true;
+				dir = LEFT;
 						}
 				} else {
 						rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);

@@ -7,7 +7,7 @@ public class Fist : MonoBehaviour
 		private int punchTime = 0;
 		private bool punching = false;
 		private int punchLimit = 20;
-		GameObject player;
+		private GameObject player;
 
 		// Use this for initialization
 		void Start ()
@@ -31,7 +31,7 @@ public class Fist : MonoBehaviour
 		void punch ()
 		{
 				punching = true;
-				rigidbody2D.velocity = new Vector2 (-15, 0);
+				rigidbody2D.velocity = new Vector2 (PlayerCroc.dir * 15, 0);
 		}
 
 		void reset ()
