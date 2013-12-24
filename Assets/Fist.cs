@@ -40,4 +40,10 @@ public class Fist : MonoBehaviour
 				punchTime = 0;
 				punching = false;
 		}
+
+		void OnTriggerEnter2D (Collider2D other)
+		{
+				if (other.gameObject.tag != "Player")
+						punchTime = punchLimit;
+		}
 }
