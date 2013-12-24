@@ -82,7 +82,7 @@ public class PlayerCroc : MonoBehaviour
 						onGround = false;
 				}
 
-				if (Input.GetKey (punchKey)) {
+				if (Input.GetKey (punchKey) && !punching) {
 						fist.SendMessage ("punch");
 						punching = true;
 				}
@@ -102,7 +102,7 @@ public class PlayerCroc : MonoBehaviour
 		{
 				if (other.gameObject.tag == "Fist" && punching) {
 						punching = false;
-						fist.rigidbody2D.velocity = new Vector2 (0, 0);
+			fist.SendMessage("reset");
 				}
 		}
 }
