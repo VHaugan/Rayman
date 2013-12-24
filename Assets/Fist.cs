@@ -24,7 +24,7 @@ public class Fist : MonoBehaviour
 				if (punchTime == punchLimit) {
 						Vector3 delta = player.transform.position - transform.position;
 						delta.Normalize ();
-						transform.position = new Vector2 (transform.position.x + (0.3f * delta.x), transform.position.y + (0.3f * delta.y));
+						rigidbody2D.velocity = new Vector2 (20 * delta.x, 20 * delta.y);
 				}
 		}
 
