@@ -31,7 +31,7 @@ public class EnemyAI : MonoBehaviour
 				if (collider.tag == "Reverse") {
 						speed *= -1;
 						transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
-			transform.position = new Vector2 (transform.position.x - 53/100, transform.position.y);
+						transform.position = new Vector2 (transform.position.x - 53 / 100, transform.position.y);
 				}
 		}
 }
