@@ -19,7 +19,7 @@ public class Gobbo : MonoBehaviour
 		void OnTriggerEnter2D (Collider2D collider)
 		{
 				score++;
-				GameObject.FindGameObjectWithTag ("Score").guiText.text = "Score: " + score.ToString();
+				//GameObject.FindGameObjectWithTag ("Score").guiText.text = "Score: " + score.ToString();
 				Destroy (gameObject);
 		}
 }

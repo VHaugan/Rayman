@@ -3,22 +3,29 @@ using System.Collections;
 
 public class PlayerCroc : MonoBehaviour
 {
-		void Start ()
-		{
-		Physics2D.IgnoreLayerCollision (10,8);
-		}
 
 		public KeyCode moveUp;
 		public KeyCode moveDown;
 		public KeyCode moveLeft;
 		public KeyCode moveRight;
+		public KeyCode punchKey;
 		private bool movingLeft = true;
 		private bool movingRight = false;
 		private bool canJump = false;
 		private bool onGround = false;
 		private bool jumping = false;
+		private bool punching = false;
 		private int jumpTime = 0;
 		private float speed = 5;
+		private GameObject fist;
+
+		void Start ()
+		{
+				Physics2D.IgnoreLayerCollision (10, 8);
+				fist = GameObject.FindGameObjectWithTag ("Fist");
+		}
+
+		
 
 		// Update is called once per frame
 		void Update ()
@@ -74,12 +81,28 @@ public class PlayerCroc : MonoBehaviour
 						canJump = false;
 						onGround = false;
 				}
+
+				if (Input.GetKey (punchKey)) {
+						fist.SendMessage ("punch");
+						punching = true;
+				}
+				if (!punching) {
+						fist.transform.position = transform.position;
+				}
 		}
 		
 		void OnCollisionEnter2D (Collision2D collision)
 		{
 				if (collision.gameObject.tag == "Ground") {
 						onGround = true;
+				}
+		}
+
+		void OnTriggerEnter2D (Collider2D other)
+		{
+				if (other.gameObject.tag == "Fist" && punching) {
+						punching = false;
+						fist.rigidbody2D.velocity = new Vector2 (0, 0);
 				}
 		}
 }
