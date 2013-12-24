@@ -28,7 +28,7 @@ public class Fist : MonoBehaviour
 				if (punchTime == punchLimit) {
 						Vector3 delta = player.transform.position - transform.position;
 						delta.Normalize ();
-						if (dir != Mathf.Sign(delta.x)) {
+						if (dir != Mathf.Sign (delta.x)) {
 								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
 								dir *= -1;
 						}
@@ -40,7 +40,7 @@ public class Fist : MonoBehaviour
 		{
 				punching = true;
 				rigidbody2D.velocity = new Vector2 (PlayerCroc.dir * 20, 0);
-		dir = PlayerCroc.dir;
+				dir = PlayerCroc.dir;
 		}
 
 		void reset ()
@@ -49,14 +49,14 @@ public class Fist : MonoBehaviour
 				rigidbody2D.velocity = new Vector2 (0, 0);
 				punchTime = 0;
 				punching = false;
-		dir = PlayerCroc.dir;
+				dir = PlayerCroc.dir;
 		}
 
 		void OnTriggerEnter2D (Collider2D other)
 		{
 				if (other.gameObject.tag != "Player" && other.gameObject.tag != "Reverse") {
 						punchTime = punchLimit;
-			dir *= -1;
+						dir *= -1;
 				}
 		}
 
