@@ -1704,7 +1704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c4ef4c86fbbe843bb89acb1c887ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup: {fileID: 8300000, guid: 3898c25073d02d7478a73cef1b12cc92, type: 3}
+  pickup: {fileID: 8300000, guid: 7901e9d52ffbcc447ad2422e4016fb28, type: 3}
 --- !u!58 &568919749
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1780,6 +1780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c04a44cd258428468abf0934d30d725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitground: {fileID: 8300000, guid: b375c6c262865c84197d1612bdff56ee, type: 3}
   moveUp: 273
   moveDown: 274
   moveLeft: 276
@@ -3263,7 +3264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c4ef4c86fbbe843bb89acb1c887ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup: {fileID: 8300000, guid: 3898c25073d02d7478a73cef1b12cc92, type: 3}
+  pickup: {fileID: 8300000, guid: 7901e9d52ffbcc447ad2422e4016fb28, type: 3}
 --- !u!212 &1227193949
 SpriteRenderer:
   m_ObjectHideFlags: 0
