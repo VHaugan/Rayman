@@ -17,6 +17,6 @@ public class bobScript : MonoBehaviour
 		void Update ()
 		{
 				x++;
-				transform.position = new Vector2 (transform.position.x, initHeight + Mathf.Sin (x / speed) / maxHeight);
+				rigidbody2D.velocity = new Vector2 (0, Mathf.Sin (x / speed) / maxHeight);
 		}
 }

@@ -118,9 +118,10 @@ public class PlayerCroc : MonoBehaviour
 		{
 				if (collision.gameObject.tag == "Ground") {
 						onGround = true;
-			//AudioSource.PlayClipAtPoint(hitground, Camera.main.transform.position);
+						AudioSource.PlayClipAtPoint(hitground, Camera.main.transform.position, 0.5f);
 				}
-		}
+
+	}
 
 		void OnTriggerEnter2D (Collider2D other)
 		{

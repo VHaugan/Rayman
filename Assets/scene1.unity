@@ -512,6 +512,7 @@ GameObject:
   - 61: {fileID: 548152270}
   - 114: {fileID: 548152269}
   - 61: {fileID: 548152268}
+  - 50: {fileID: 548152273}
   m_Layer: 0
   m_Name: butterfly_plant2
   m_TagString: Ground
@@ -588,6 +589,21 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &548152273
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 548152267}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
 --- !u!1 &568919745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,7 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c4ef4c86fbbe843bb89acb1c887ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup: {fileID: 8300000, guid: 7901e9d52ffbcc447ad2422e4016fb28, type: 3}
+  pickup: {fileID: 8300000, guid: e25a180eaa67c1c4285ae98a41b015a3, type: 3}
 --- !u!58 &568919749
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1780,7 +1796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c04a44cd258428468abf0934d30d725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitground: {fileID: 8300000, guid: b375c6c262865c84197d1612bdff56ee, type: 3}
+  hitground: {fileID: 8300000, guid: eec7ed2f40b88f247b47613024398ce4, type: 3}
   moveUp: 273
   moveDown: 274
   moveLeft: 276
@@ -3264,7 +3280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c4ef4c86fbbe843bb89acb1c887ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup: {fileID: 8300000, guid: 7901e9d52ffbcc447ad2422e4016fb28, type: 3}
+  pickup: {fileID: 8300000, guid: e25a180eaa67c1c4285ae98a41b015a3, type: 3}
 --- !u!212 &1227193949
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3657,6 +3673,7 @@ GameObject:
   - 61: {fileID: 1561119650}
   - 114: {fileID: 1561119653}
   - 61: {fileID: 1561119654}
+  - 50: {fileID: 1561119655}
   m_Layer: 0
   m_Name: butterfly_plant1
   m_TagString: Ground
@@ -3733,6 +3750,21 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .75999999, y: .119999997}
   m_Center: {x: 0, y: -.0599999987}
+--- !u!50 &1561119655
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561119649}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
 --- !u!1 &1604650556
 GameObject:
   m_ObjectHideFlags: 0
@@ -3745,6 +3777,7 @@ GameObject:
   - 61: {fileID: 1604650559}
   - 114: {fileID: 1604650558}
   - 61: {fileID: 1604650557}
+  - 50: {fileID: 1604650562}
   m_Layer: 0
   m_Name: butterfly_plant2
   m_TagString: Ground
@@ -3821,6 +3854,21 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &1604650562
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1604650556}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
 --- !u!1 &1654062945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3995,6 +4043,7 @@ GameObject:
   - 61: {fileID: 2094859904}
   - 114: {fileID: 2094859903}
   - 61: {fileID: 2094859902}
+  - 50: {fileID: 2094859907}
   m_Layer: 0
   m_Name: butterfly_plant1
   m_TagString: Ground
@@ -4071,6 +4120,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &2094859907
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2094859901}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
 --- !u!1 &2139452616
 GameObject:
   m_ObjectHideFlags: 0
@@ -4083,6 +4147,7 @@ GameObject:
   - 61: {fileID: 2139452619}
   - 114: {fileID: 2139452618}
   - 61: {fileID: 2139452617}
+  - 50: {fileID: 2139452622}
   m_Layer: 0
   m_Name: butterfly_plant2
   m_TagString: Ground
@@ -4159,3 +4224,18 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &2139452622
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2139452616}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
