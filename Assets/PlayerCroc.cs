@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerCroc : MonoBehaviour
 {
 	public AudioClip hitground;
+	public AudioClip punch;
 		public KeyCode moveUp;
 		public KeyCode moveDown;
 		public KeyCode moveLeft;
@@ -89,6 +90,7 @@ public class PlayerCroc : MonoBehaviour
 						fistCoolDownStart = Time.time;
 						fist.SendMessage ("punch");
 						punching = true;
+				AudioSource.PlayClipAtPoint(punch, Camera.main.transform.position, 0.5f);
 				}
 				if (!punching) {
 						fist.transform.position = transform.position;
