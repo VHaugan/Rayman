@@ -23,7 +23,7 @@ public class Gobbo : MonoBehaviour
 		{
 				score++;
 				//GameObject.FindGameObjectWithTag ("Score").guiText.text = "Score: " + score.ToString();
-		float volume = 0.1f;
+		float volume = 0.2f;
 		float frequency = 0;
 		AudioSource.PlayClipAtPoint (pickup, Camera.main.transform.position, volume);
 				Destroy (gameObject);
