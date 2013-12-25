@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerCroc : MonoBehaviour
 {
+	public AudioClip hitground;
 		public KeyCode moveUp;
 		public KeyCode moveDown;
 		public KeyCode moveLeft;
@@ -117,6 +118,7 @@ public class PlayerCroc : MonoBehaviour
 		{
 				if (collision.gameObject.tag == "Ground") {
 						onGround = true;
+			//AudioSource.PlayClipAtPoint(hitground, Camera.main.transform.position);
 				}
 		}
 
