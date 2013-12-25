@@ -7,6 +7,8 @@ public class Fist : MonoBehaviour
 		private int punchTime = 0;
 		private bool punching = false;
 		private int punchLimit = 20;
+		private int punchSpeed = 20;
+		private int returnSpeed = 25;
 		private GameObject player;
 		private float initScale;
 		private int dir;
@@ -32,14 +34,14 @@ public class Fist : MonoBehaviour
 								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
 								dir *= -1;
 						}
-						rigidbody2D.velocity = new Vector2 (25 * delta.x, 25 * delta.y);
+						rigidbody2D.velocity = new Vector2 (punchSpeed * delta.x, returnSpeed * delta.y);
 				}
 		}
 
 		void punch ()
 		{
 				punching = true;
-				rigidbody2D.velocity = new Vector2 (PlayerCroc.dir * 20, 0);
+				rigidbody2D.velocity = new Vector2 (PlayerCroc.dir * punchSpeed, 0);
 				dir = PlayerCroc.dir;
 		}
 

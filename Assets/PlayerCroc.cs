@@ -87,7 +87,6 @@ public class PlayerCroc : MonoBehaviour
 				}
 
 				if (Input.GetKey (punchKey) && !punching && !fistCoolDown) {
-						fistCoolDownStart = Time.time;
 						fist.SendMessage ("punch");
 						punching = true;
 				AudioSource.PlayClipAtPoint(punch, Camera.main.transform.position, 0.5f);
@@ -122,18 +121,20 @@ public class PlayerCroc : MonoBehaviour
 						onGround = true;
 						AudioSource.PlayClipAtPoint(hitground, Camera.main.transform.position, 0.5f);
 				}
+				if (collision.gameObject.tag == "Death") {
+					transform.position = new Vector2 (2.5f, 2.5f);
+				}
 
 	}
 
 		void OnTriggerEnter2D (Collider2D other)
 		{
 				if (other.gameObject.tag == "Fist" && punching) {
+						fistCoolDownStart = Time.time;
 						fistCoolDown = true;
 						punching = false;
 						fist.SendMessage ("reset");
 				}
-				if (other.gameObject.tag == "Death") {
-						transform.position = new Vector2 (2.5f, 2.5f);
-				}
+				
 		}
 }

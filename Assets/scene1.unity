@@ -1979,9 +1979,9 @@ GameObject:
   - 50: {fileID: 977399050}
   - 61: {fileID: 977399049}
   - 114: {fileID: 977399053}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: thrillerguy
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3662,7 +3662,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1364356100}
   - 68: {fileID: 1364356099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeathBox
   m_TagString: Death
   m_Icon: {fileID: 0}
@@ -3677,7 +3677,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1364356098}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Points:
   - {x: -34.2131195, y: 0}
   - {x: .5, y: 0}
@@ -4048,7 +4048,7 @@ AudioSource:
   m_GameObject: {fileID: 1741686634}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 413a3678922a28747acfd997745c2ddb, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: .75
   m_Pitch: 1
@@ -4107,6 +4107,52 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.86864614, y: 2.5387342, z: 8.96679688}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!1 &1971491099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1971491101}
+  - 131: {fileID: 1971491100}
+  m_Layer: 11
+  m_Name: HP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &1971491100
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971491099}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: 49ff5dcc5877f9147a43c00882588bbc, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 16
+    height: 16
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &1971491101
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971491099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .00200000009, y: .970150948, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &2015964513

@@ -33,5 +33,8 @@ public class EnemyAI : MonoBehaviour
 						transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
 						transform.position = new Vector2 (transform.position.x - 53 / 100, transform.position.y);
 				}
+				if (collider.gameObject.tag == "Fist") {
+						Destroy (gameObject);	
+				}
 		}
 }
