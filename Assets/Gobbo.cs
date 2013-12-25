@@ -6,6 +6,7 @@ public class Gobbo : MonoBehaviour
 		static int score = 0;
 		private float x = 0;
 		private float initHeight;
+	public AudioClip pickup;
 
 		void Start ()
 		{
@@ -22,6 +23,7 @@ public class Gobbo : MonoBehaviour
 		{
 				score++;
 				//GameObject.FindGameObjectWithTag ("Score").guiText.text = "Score: " + score.ToString();
+		AudioSource.PlayClipAtPoint (pickup, Camera.main.transform.position);
 				Destroy (gameObject);
 		}
 }

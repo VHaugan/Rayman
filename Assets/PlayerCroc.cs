@@ -97,6 +97,20 @@ public class PlayerCroc : MonoBehaviour
 								}
 						}
 				}
+
+				RaycastHit2D[] rayCast = Physics2D.RaycastAll (transform.position, new Vector2 (0, -1));
+
+				
+				foreach (RaycastHit2D hit in rayCast) {
+						if (hit.collider.gameObject.tag == "Ground") {
+								if (hit.fraction < 1.7) {
+										canJump = true;
+								} else {
+										canJump = false;
+								}
+				break;
+						}
+				}
 		}
 		
 		void OnCollisionEnter2D (Collision2D collision)
@@ -112,6 +126,9 @@ public class PlayerCroc : MonoBehaviour
 						fistCoolDown = true;
 						punching = false;
 						fist.SendMessage ("reset");
+				}
+				if (other.gameObject.tag == "Death") {
+						transform.position = new Vector2 (2.5f, 2.5f);
 				}
 		}
 }
