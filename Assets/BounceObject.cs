@@ -15,7 +15,6 @@ public class BounceObject : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		rigidbody2D.velocity = new Vector2(xSpeed, rigidbody2D.velocity.y);
 	}
 
 	void OnCollisionEnter2D (Collision2D collision) {
@@ -26,14 +25,14 @@ public class BounceObject : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D collider)
 	{
-		if (collider.gameObject.tag == "Fist") {
-			if (rigidbody2D.IsSleeping())
-				rigidbody2D.WakeUp();
-			else {
-				if(Mathf.Sign (collider.rigidbody2D.velocity.x) > 0)
-					xSpeed += punchForce;
-				else xSpeed -= punchForce;
-			}
-		}
+		if (collider.gameObject.tag == "Fist" && Fist.punching) {
+						if (rigidbody2D.IsSleeping ()) {
+								rigidbody2D.WakeUp ();
+						renderer.sortingOrder = 1;
+				}
+						else {
+								rigidbody2D.velocity = new Vector2 (Mathf.Sign (collider.rigidbody2D.velocity.x) * 5, 0);
+						}
+				}
 	}
 }

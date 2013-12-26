@@ -5,7 +5,7 @@ public class Fist : MonoBehaviour
 {
 
 		private int punchTime = 0;
-		private bool punching = false;
+		static public bool punching = false;
 		private int punchLimit = 20;
 		private int punchSpeed = 20;
 		private int returnSpeed = 25;
@@ -56,7 +56,7 @@ public class Fist : MonoBehaviour
 
 		void OnTriggerEnter2D (Collider2D other)
 		{
-				if (other.gameObject.tag != "Player" && other.gameObject.tag != "Reverse") {
+				if (other.gameObject.tag != "Player" && other.gameObject.tag != "Reverse" && punching) {
 						punchTime = punchLimit;
 						dir *= -1;
 				}

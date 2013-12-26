@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PlayerCroc : MonoBehaviour
 {
-	public AudioClip hitground;
-	public AudioClip punch;
+		public AudioClip hitground;
+		public AudioClip punch;
 		public KeyCode moveUp;
 		public KeyCode moveDown;
 		public KeyCode moveLeft;
@@ -22,11 +22,17 @@ public class PlayerCroc : MonoBehaviour
 		private GameObject fist;
 		private float fistCoolDownStart = 0;
 		private bool fistCoolDown = false;
+		public float deadZone = 0.1f;
+		private float g = 0;
+		private int touchingPlatforms = 0;
+		private Rigidbody2D body;
 
 		void Start ()
 		{
 				Physics2D.IgnoreLayerCollision (10, 8);
 				fist = GameObject.FindGameObjectWithTag ("Fist");
+				g = rigidbody2D.gravityScale;
+				body = rigidbody2D;
 		}
 	
 		// Update is called once per frame
@@ -39,6 +45,7 @@ public class PlayerCroc : MonoBehaviour
 								onGround = false;
 								canJump = false;
 								jumping = true;
+				GameObject.FindGameObjectWithTag ("Berry").layer = 12;
 						}
 						if (jumping) {
 								if (jumpTime == 20) {
@@ -89,7 +96,7 @@ public class PlayerCroc : MonoBehaviour
 				if (Input.GetKey (punchKey) && !punching && !fistCoolDown) {
 						fist.SendMessage ("punch");
 						punching = true;
-				AudioSource.PlayClipAtPoint(punch, Camera.main.transform.position, 0.5f);
+						AudioSource.PlayClipAtPoint (punch, Camera.main.transform.position, 0.5f);
 				}
 				if (!punching) {
 						fist.transform.position = transform.position;
@@ -101,31 +108,36 @@ public class PlayerCroc : MonoBehaviour
 				}
 
 				RaycastHit2D[] rayCast = Physics2D.RaycastAll (transform.position, new Vector2 (0, -1));
-
-				
+		if (GameObject.FindGameObjectWithTag ("Berry").layer == 8) {
+						GameObject.FindGameObjectWithTag ("Berry").layer = 12;
+				}
 				foreach (RaycastHit2D hit in rayCast) {
-						if (hit.collider.gameObject.tag == "Ground") {
-								if (hit.fraction < 1.7) {
+
+			//{}
+			if (hit.collider.gameObject.tag == "Ground"||hit.collider.gameObject.tag == "Berry") {
+				if (rigidbody2D.velocity.y < 0) {
+					if (hit.collider.gameObject.tag == "Berry")GameObject.FindGameObjectWithTag ("Berry").layer = 8;}
+								if (hit.fraction < 1.5) {
 										canJump = true;
 								} else {
 										canJump = false;
 								}
-				break;
+								break;
 						}
 				}
 		}
 		
 		void OnCollisionEnter2D (Collision2D collision)
 		{
-				if (collision.gameObject.tag == "Ground") {
+				if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Berry") {
 						onGround = true;
-						AudioSource.PlayClipAtPoint(hitground, Camera.main.transform.position, 0.5f);
+						AudioSource.PlayClipAtPoint (hitground, Camera.main.transform.position, 0.5f);
 				}
 				if (collision.gameObject.tag == "Death") {
-					transform.position = new Vector2 (2.5f, 2.5f);
+						transform.position = new Vector2 (2.5f, 2.5f);
 				}
 
-	}
+		}
 
 		void OnTriggerEnter2D (Collider2D other)
 		{
@@ -135,6 +147,10 @@ public class PlayerCroc : MonoBehaviour
 						punching = false;
 						fist.SendMessage ("reset");
 				}
-				
+				if (other.gameObject.tag == "OneWayPlatform") {
+						if (rigidbody2D.velocity.y < 0) {
+								GameObject.FindGameObjectWithTag ("Berry").layer = 8;
+						}
+				}
 		}
 }
