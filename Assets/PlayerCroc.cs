@@ -22,17 +22,11 @@ public class PlayerCroc : MonoBehaviour
 		private GameObject fist;
 		private float fistCoolDownStart = 0;
 		private bool fistCoolDown = false;
-		public float deadZone = 0.1f;
-		private float g = 0;
-		private int touchingPlatforms = 0;
-		private Rigidbody2D body;
 
 		void Start ()
 		{
 				Physics2D.IgnoreLayerCollision (10, 8);
 				fist = GameObject.FindGameObjectWithTag ("Fist");
-				g = rigidbody2D.gravityScale;
-				body = rigidbody2D;
 		}
 	
 		// Update is called once per frame
