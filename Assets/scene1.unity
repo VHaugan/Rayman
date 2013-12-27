@@ -4344,6 +4344,45 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+--- !u!1 &900966617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 900966619}
+  - 68: {fileID: 900966618}
+  m_Layer: 0
+  m_Name: Camera Boundry
+  m_TagString: CameraBound
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!68 &900966618
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 900966617}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Points:
+  - {x: -25.5111351, y: -.275624752}
+  - {x: 16.7424431, y: -.447187901}
+--- !u!4 &900966619
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 900966617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.2743597, y: -3.18883562, z: -.0686035156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &920430759
 GameObject:
   m_ObjectHideFlags: 0
@@ -7035,7 +7074,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 64
+  field of view: 51
   orthographic: 0
   orthographic size: 4.84630251
   m_Depth: -1
@@ -7070,6 +7109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dampTime: .150000006
   target: {fileID: 920430762}
+  bound: {fileID: 900966617}
 --- !u!1 &1287400268
 GameObject:
   m_ObjectHideFlags: 0
