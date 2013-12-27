@@ -5,6 +5,7 @@ public class EnemyAI : MonoBehaviour
 {
 		private bool onGround = false;
 		private float speed = 4;
+		private int hp = 5;
 
 		void Start ()
 		{
@@ -34,6 +35,9 @@ public class EnemyAI : MonoBehaviour
 						transform.position = new Vector2 (transform.position.x - 53 / 100, transform.position.y);
 				}
 				if (collider.gameObject.tag == "Fist") {
+					if (hp > 1)
+						hp--;
+					else
 						Destroy (gameObject);	
 				}
 		}

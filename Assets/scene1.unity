@@ -10354,45 +10354,6 @@ Prefab:
   m_RootGameObject: {fileID: 1167290732}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &900966617
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 900966619}
-  - 68: {fileID: 900966618}
-  m_Layer: 0
-  m_Name: Camera Boundry
-  m_TagString: CameraBound
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!68 &900966618
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 900966617}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Points:
-  - {x: -25.5111351, y: -.275624752}
-  - {x: 16.7424431, y: -.447187901}
---- !u!4 &900966619
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 900966617}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2743597, y: -3.18883562, z: -.0686035156}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &920430759
 GameObject:
   m_ObjectHideFlags: 0
@@ -10425,6 +10386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitground: {fileID: 8300000, guid: f0048ea4b0bf04247b3e0226db6007f2, type: 3}
   punch: {fileID: 8300000, guid: ceb44bf884b5c6649a1657b69909185e, type: 3}
+  death: {fileID: 8300000, guid: fee86bdd326eb4843b28f44ef4945ee6, type: 3}
   moveUp: 273
   moveDown: 274
   moveLeft: 276
@@ -14286,6 +14248,45 @@ Transform:
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 1439402741}
+--- !u!1 &1236627587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1236627589}
+  - 68: {fileID: 1236627588}
+  m_Layer: 0
+  m_Name: Camera Boundry
+  m_TagString: CameraBound
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!68 &1236627588
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236627587}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Points:
+  - {x: -.5, y: 0}
+  - {x: .5, y: 0}
+--- !u!4 &1236627589
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236627587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.91679692, y: -3.9559865, z: 8.96143055}
+  m_LocalScale: {x: 80, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1283909135
 GameObject:
   m_ObjectHideFlags: 0
@@ -14460,7 +14461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dampTime: .150000006
   target: {fileID: 920430762}
-  bound: {fileID: 900966617}
+  bound: {fileID: 1236627587}
 --- !u!1 &1287400268
 GameObject:
   m_ObjectHideFlags: 0
@@ -16850,7 +16851,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1364356098}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Points:
   - {x: -34.2131195, y: 0}
   - {x: .5, y: 0}
@@ -16861,8 +16862,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1364356098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.2304935, y: -13.3885212, z: 8.96679688}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 30.2934513, y: -8.09056664, z: 8.96679688}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1439402737
@@ -19604,7 +19605,7 @@ GameObject:
   - 82: {fileID: 1741686635}
   m_Layer: 0
   m_Name: Game Music
-  m_TagString: Untagged
+  m_TagString: Muzak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19622,7 +19623,7 @@ AudioSource:
   m_Volume: .75
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1

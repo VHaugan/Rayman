@@ -5,6 +5,7 @@ public class PlayerCroc : MonoBehaviour
 {
 		public AudioClip hitground;
 		public AudioClip punch;
+		public AudioClip death;
 		public KeyCode moveUp;
 		public KeyCode moveDown;
 		public KeyCode moveLeft;
@@ -17,16 +18,29 @@ public class PlayerCroc : MonoBehaviour
 		private bool onGround = false;
 		private bool jumping = false;
 		private bool punching = false;
+		private bool dead = false;
 		private int jumpTime = 0;
+		private float deathTime;
 		private float speed = 5;
 		private GameObject fist;
+		private GameObject mainMusic;
 		private float fistCoolDownStart = 0;
 		private bool fistCoolDown = false;
+		
+
+		private void playerDie() {
+			mainMusic.audio.Stop ();
+			AudioSource.PlayClipAtPoint (death, Camera.main.transform.position, 0.5f);
+			deathTime = Time.time;
+			dead = true;
+			
+		}
 
 		void Start ()
 		{
 				Physics2D.IgnoreLayerCollision (10, 8);
 				fist = GameObject.FindGameObjectWithTag ("Fist");
+				mainMusic = GameObject.FindGameObjectWithTag ("Muzak");
 		}
 	
 		// Update is called once per frame
@@ -95,7 +109,7 @@ public class PlayerCroc : MonoBehaviour
 				if (!punching) {
 						fist.transform.position = transform.position;
 						if (fistCoolDown) {
-								if (Time.time - fistCoolDownStart > 0.7) {
+								if (Time.time - fistCoolDownStart > 0.3) {
 										fistCoolDown = false;
 								}
 						}
@@ -119,6 +133,14 @@ public class PlayerCroc : MonoBehaviour
 								break;
 						}
 				}
+
+				if (dead) {
+					if ((Time.time - deathTime) > 6) {
+						transform.position = new Vector2 (2.5f, 2.5f);
+						mainMusic.audio.Play ();
+						dead = false;
+					}
+				}
 		}
 		
 		void OnCollisionEnter2D (Collision2D collision)
@@ -127,10 +149,6 @@ public class PlayerCroc : MonoBehaviour
 						onGround = true;
 						AudioSource.PlayClipAtPoint (hitground, Camera.main.transform.position, 0.5f);
 				}
-				if (collision.gameObject.tag == "Death") {
-						transform.position = new Vector2 (2.5f, 2.5f);
-				}
-
 		}
 
 		void OnTriggerEnter2D (Collider2D other)
@@ -146,5 +164,8 @@ public class PlayerCroc : MonoBehaviour
 								GameObject.FindGameObjectWithTag ("Berry").layer = 8;
 						}
 				}
-		}
+				if (other.gameObject.tag == "Death") {
+					if (!dead) playerDie();
+				}
+	}
 }
