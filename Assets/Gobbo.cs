@@ -16,7 +16,7 @@ public class Gobbo : MonoBehaviour
 		void Update ()
 		{
 				x++;
-				transform.position = new Vector2 (transform.position.x, initHeight + Mathf.Sin (x / 30) / 8);
+				transform.position = new Vector2 (transform.position.x, initHeight + Mathf.Sin (x / 30) / 16);
 		}
 
 		void OnTriggerEnter2D (Collider2D collider)
