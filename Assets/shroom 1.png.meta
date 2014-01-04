@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e851beb17611f64d913267379c5007e
+guid: ed8592eb8aab2434d95b7071f1b0d190
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -45,571 +45,571 @@ TextureImporter:
     compressionQuality: 50
   spriteSheet:
     sprites:
-    - name: shroom_0
+    - name: shroom 1_0
       rect:
         serializedVersion: 2
-        x: 79
-        y: 3866
-        width: 94
-        height: 72
+        x: 0
+        y: 1792
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_1
+    - name: shroom 1_1
       rect:
         serializedVersion: 2
-        x: 335
-        y: 3866
-        width: 98
-        height: 76
+        x: 256
+        y: 1792
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_2
+    - name: shroom 1_2
       rect:
         serializedVersion: 2
-        x: 592
-        y: 3866
-        width: 97
-        height: 80
+        x: 512
+        y: 1792
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_3
+    - name: shroom 1_3
       rect:
         serializedVersion: 2
-        x: 855
-        y: 3866
-        width: 91
-        height: 84
+        x: 768
+        y: 1792
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_4
+    - name: shroom 1_4
       rect:
         serializedVersion: 2
-        x: 1112
-        y: 3866
-        width: 92
-        height: 88
+        x: 1024
+        y: 1792
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_5
+    - name: shroom 1_5
       rect:
         serializedVersion: 2
-        x: 1371
-        y: 3866
-        width: 91
-        height: 92
+        x: 1280
+        y: 1792
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_6
+    - name: shroom 1_6
       rect:
         serializedVersion: 2
-        x: 1630
-        y: 3866
-        width: 98
-        height: 96
+        x: 1536
+        y: 1792
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_7
+    - name: shroom 1_7
       rect:
         serializedVersion: 2
-        x: 1888
-        y: 3866
-        width: 90
-        height: 100
+        x: 1792
+        y: 1792
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_8
+    - name: shroom 1_8
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 3866
-        width: 86
-        height: 106
+        x: 0
+        y: 1536
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_9
+    - name: shroom 1_9
       rect:
         serializedVersion: 2
-        x: 2406
-        y: 3866
-        width: 88
-        height: 111
+        x: 256
+        y: 1536
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_10
+    - name: shroom 1_10
       rect:
         serializedVersion: 2
-        x: 2664
-        y: 3866
-        width: 86
-        height: 115
+        x: 512
+        y: 1536
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_11
+    - name: shroom 1_11
       rect:
         serializedVersion: 2
-        x: 2922
-        y: 3866
-        width: 88
-        height: 119
+        x: 768
+        y: 1536
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_12
+    - name: shroom 1_12
       rect:
         serializedVersion: 2
-        x: 3179
-        y: 3866
-        width: 87
-        height: 120
+        x: 1024
+        y: 1536
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_13
+    - name: shroom 1_13
       rect:
         serializedVersion: 2
-        x: 3438
-        y: 3866
-        width: 88
-        height: 124
+        x: 1280
+        y: 1536
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_14
+    - name: shroom 1_14
       rect:
         serializedVersion: 2
-        x: 3696
-        y: 3866
-        width: 86
-        height: 134
+        x: 1536
+        y: 1536
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_15
+    - name: shroom 1_15
       rect:
         serializedVersion: 2
-        x: 86
-        y: 3610
-        width: 84
-        height: 128
+        x: 1792
+        y: 1536
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_16
+    - name: shroom 1_16
       rect:
         serializedVersion: 2
-        x: 342
-        y: 3610
-        width: 88
-        height: 132
+        x: 0
+        y: 1280
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_17
+    - name: shroom 1_17
       rect:
         serializedVersion: 2
-        x: 592
-        y: 3610
-        width: 97
-        height: 132
+        x: 256
+        y: 1280
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_18
+    - name: shroom 1_18
       rect:
         serializedVersion: 2
-        x: 858
-        y: 3610
-        width: 88
-        height: 136
+        x: 512
+        y: 1280
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_19
+    - name: shroom 1_19
       rect:
         serializedVersion: 2
-        x: 1115
-        y: 3610
-        width: 87
-        height: 136
+        x: 768
+        y: 1280
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_20
+    - name: shroom 1_20
       rect:
         serializedVersion: 2
-        x: 1374
-        y: 3610
-        width: 88
-        height: 137
+        x: 1024
+        y: 1280
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_21
+    - name: shroom 1_21
       rect:
         serializedVersion: 2
-        x: 1634
-        y: 3610
-        width: 84
-        height: 140
+        x: 1280
+        y: 1280
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_22
+    - name: shroom 1_22
       rect:
         serializedVersion: 2
-        x: 1890
-        y: 3610
-        width: 88
-        height: 140
+        x: 1536
+        y: 1280
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_23
+    - name: shroom 1_23
       rect:
         serializedVersion: 2
-        x: 2150
-        y: 3610
-        width: 84
-        height: 140
+        x: 1792
+        y: 1280
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_24
+    - name: shroom 1_24
       rect:
         serializedVersion: 2
-        x: 2406
-        y: 3610
-        width: 88
-        height: 140
+        x: 0
+        y: 1024
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_25
+    - name: shroom 1_25
       rect:
         serializedVersion: 2
-        x: 2665
-        y: 3610
-        width: 85
-        height: 140
+        x: 256
+        y: 1024
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_26
+    - name: shroom 1_26
       rect:
         serializedVersion: 2
-        x: 2922
-        y: 3610
-        width: 88
-        height: 139
+        x: 512
+        y: 1024
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_27
+    - name: shroom 1_27
       rect:
         serializedVersion: 2
-        x: 3179
-        y: 3610
-        width: 87
-        height: 136
+        x: 768
+        y: 1024
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_28
+    - name: shroom 1_28
       rect:
         serializedVersion: 2
-        x: 3438
-        y: 3610
-        width: 88
-        height: 136
+        x: 1024
+        y: 1024
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_29
+    - name: shroom 1_29
       rect:
         serializedVersion: 2
-        x: 3695
-        y: 3610
-        width: 87
-        height: 136
+        x: 1280
+        y: 1024
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_30
+    - name: shroom 1_30
       rect:
         serializedVersion: 2
-        x: 86
-        y: 3344
-        width: 84
-        height: 142
+        x: 1536
+        y: 1024
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_31
+    - name: shroom 1_31
       rect:
         serializedVersion: 2
-        x: 336
-        y: 3344
-        width: 94
-        height: 142
+        x: 1792
+        y: 1024
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_32
+    - name: shroom 1_32
       rect:
         serializedVersion: 2
-        x: 602
-        y: 3350
-        width: 84
-        height: 136
+        x: 0
+        y: 768
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_33
+    - name: shroom 1_33
       rect:
         serializedVersion: 2
-        x: 858
-        y: 3350
-        width: 88
-        height: 132
+        x: 256
+        y: 768
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_34
+    - name: shroom 1_34
       rect:
         serializedVersion: 2
-        x: 1115
-        y: 3350
-        width: 87
-        height: 132
+        x: 512
+        y: 768
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_35
+    - name: shroom 1_35
       rect:
         serializedVersion: 2
-        x: 1374
-        y: 3350
-        width: 88
-        height: 128
+        x: 768
+        y: 768
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_36
+    - name: shroom 1_36
       rect:
         serializedVersion: 2
-        x: 1631
-        y: 3350
-        width: 87
-        height: 126
+        x: 1024
+        y: 768
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_37
+    - name: shroom 1_37
       rect:
         serializedVersion: 2
-        x: 1890
-        y: 3350
-        width: 88
-        height: 124
+        x: 1280
+        y: 768
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_38
+    - name: shroom 1_38
       rect:
         serializedVersion: 2
-        x: 2144
-        y: 3350
-        width: 90
-        height: 120
+        x: 1536
+        y: 768
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_39
+    - name: shroom 1_39
       rect:
         serializedVersion: 2
-        x: 2406
-        y: 3350
-        width: 90
-        height: 116
+        x: 1792
+        y: 768
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_40
+    - name: shroom 1_40
       rect:
         serializedVersion: 2
-        x: 2663
-        y: 3350
-        width: 87
-        height: 112
+        x: 0
+        y: 512
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_41
+    - name: shroom 1_41
       rect:
         serializedVersion: 2
-        x: 2919
-        y: 3350
-        width: 91
-        height: 108
+        x: 256
+        y: 512
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_42
+    - name: shroom 1_42
       rect:
         serializedVersion: 2
-        x: 3178
-        y: 3350
-        width: 90
-        height: 104
+        x: 512
+        y: 512
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_43
+    - name: shroom 1_43
       rect:
         serializedVersion: 2
-        x: 3435
-        y: 3350
-        width: 91
-        height: 106
+        x: 768
+        y: 512
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_44
+    - name: shroom 1_44
       rect:
         serializedVersion: 2
-        x: 3691
-        y: 3344
-        width: 94
-        height: 98
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_45
+    - name: shroom 1_45
       rect:
         serializedVersion: 2
-        x: 79
-        y: 3087
-        width: 94
-        height: 91
+        x: 1280
+        y: 512
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_46
+    - name: shroom 1_46
       rect:
         serializedVersion: 2
-        x: 336
-        y: 3087
-        width: 96
-        height: 83
+        x: 1536
+        y: 512
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_47
+    - name: shroom 1_47
       rect:
         serializedVersion: 2
-        x: 592
-        y: 3087
-        width: 100
-        height: 75
+        x: 1792
+        y: 512
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_48
+    - name: shroom 1_48
       rect:
         serializedVersion: 2
-        x: 851
-        y: 3087
-        width: 98
-        height: 71
+        x: 0
+        y: 256
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_49
+    - name: shroom 1_49
       rect:
         serializedVersion: 2
-        x: 1107
-        y: 3087
-        width: 102
-        height: 67
+        x: 256
+        y: 256
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_50
+    - name: shroom 1_50
       rect:
         serializedVersion: 2
-        x: 1366
-        y: 3087
-        width: 106
-        height: 63
+        x: 512
+        y: 256
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_51
+    - name: shroom 1_51
       rect:
         serializedVersion: 2
-        x: 1619
-        y: 3087
-        width: 107
-        height: 66
+        x: 768
+        y: 256
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_52
+    - name: shroom 1_52
       rect:
         serializedVersion: 2
-        x: 1879
-        y: 3087
-        width: 107
-        height: 59
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_53
+    - name: shroom 1_53
       rect:
         serializedVersion: 2
-        x: 2135
-        y: 3087
-        width: 111
-        height: 55
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_54
+    - name: shroom 1_54
       rect:
         serializedVersion: 2
-        x: 2391
-        y: 3087
-        width: 114
-        height: 55
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_55
+    - name: shroom 1_55
       rect:
         serializedVersion: 2
-        x: 2651
-        y: 3087
-        width: 111
-        height: 55
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_56
+    - name: shroom 1_56
       rect:
         serializedVersion: 2
-        x: 2908
-        y: 3086
-        width: 113
-        height: 56
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_57
+    - name: shroom 1_57
       rect:
         serializedVersion: 2
-        x: 3168
-        y: 3087
-        width: 110
-        height: 55
+        x: 256
+        y: 0
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_58
+    - name: shroom 1_58
       rect:
         serializedVersion: 2
-        x: 3427
-        y: 3087
-        width: 109
-        height: 59
+        x: 512
+        y: 0
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_59
+    - name: shroom 1_59
       rect:
         serializedVersion: 2
-        x: 3683
-        y: 3087
-        width: 107
-        height: 65
+        x: 768
+        y: 0
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_60
+    - name: shroom 1_60
       rect:
         serializedVersion: 2
-        x: 75
-        y: 2831
-        width: 103
-        height: 63
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_61
+    - name: shroom 1_61
       rect:
         serializedVersion: 2
-        x: 332
-        y: 2832
-        width: 104
-        height: 65
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
-    - name: shroom_62
+    - name: shroom 1_62
       rect:
         serializedVersion: 2
-        x: 592
-        y: 2831
-        width: 100
-        height: 71
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
       alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 
