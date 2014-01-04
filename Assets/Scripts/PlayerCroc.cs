@@ -13,7 +13,7 @@ public class PlayerCroc : MonoBehaviour
 		public KeyCode punchKey;
 		private static int LEFT = -1;
 		private static int RIGHT = 1;
-		public static int dir = LEFT;
+		public static int dir = RIGHT;
 		private bool canJump = false;
 		private bool onGround = false;
 		private bool jumping = false;
