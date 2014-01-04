@@ -10,29 +10,30 @@ public class PlayerCroc : MonoBehaviour
 		public KeyCode moveDown;
 		public KeyCode moveLeft;
 		public KeyCode moveRight;
+		public KeyCode jumpKey;
 		public KeyCode punchKey;
 		private static int LEFT = -1;
 		private static int RIGHT = 1;
 		public static int dir = RIGHT;
-		private bool canJump = false;
-		private bool onGround = false;
-		private bool jumping = false;
+		private bool holdingJump = false;
 		private bool punching = false;
-		private bool dead = false;
 		private int jumpTime = 0;
 		private float deathTime;
 		private float speed = 5;
 		private GameObject fist;
 		private GameObject mainMusic;
 		private float fistCoolDownStart = 0;
+		private float CLIMB_SPEED = 0.04f;
 		private bool fistCoolDown = false;
+		private int playerState = 1; // 0 = dead, 1 = on ground, 2 = jumping, 3 = falling, 4 = climbing, 6 = hanging
 		
 
 		private void playerDie() {
+			playerState = 0;
+			rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);
 			mainMusic.audio.Stop ();
 			AudioSource.PlayClipAtPoint (death, Camera.main.transform.position, 0.5f);
 			deathTime = Time.time;
-			dead = true;
 			
 		}
 
@@ -47,58 +48,72 @@ public class PlayerCroc : MonoBehaviour
 
 		void Update ()
 		{
-				if (Input.GetKey (moveUp)) {
-						if (canJump) {
+				if (Input.GetKey (jumpKey)) {
+					if ((playerState == 1 || (playerState == 4 && (Input.GetKey (moveLeft) || Input.GetKey (moveRight)))) && !holdingJump) {
 								rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, 6);
-								onGround = false;
-								canJump = false;
-								jumping = true;
+								playerState = 2;
 				GameObject.FindGameObjectWithTag ("Berry").layer = 12;
 						}
-						if (jumping) {
-								if (jumpTime == 20) {
-										jumping = false;
-										jumpTime = 0;
-								}
-								rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, 10);
+						if (playerState == 2) {
 								jumpTime++;
+								rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, 10);
+								if (jumpTime == 20) {
+										playerState = 3;
+										jumpTime = 0;
+								}	
 						}
-				} else {
-						jumping = false;
+						holdingJump = true;
+				} else if (playerState == 2) {
+						playerState = 3;
 						jumpTime = 0;
-						
 				}
 
-				if (Input.GetKey (moveRight)) {
+				if (Input.GetKey (moveUp)) {
+					if (playerState == 4) {
+						transform.position = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y + CLIMB_SPEED);
+						rigidbody2D.Sleep ();
+					}
+				}
 
-						rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
-						if (dir == LEFT) {
-								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
-								fist.SendMessage ("Flip");
-								dir = RIGHT;
-							
-						}
-				} else if (Input.GetKey (moveLeft)) {
-						rigidbody2D.velocity = new Vector2 (speed * -1, rigidbody2D.velocity.y);
-						if (dir == RIGHT) {
-								fist.SendMessage ("Flip");
-								transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
-								dir = LEFT;
-						}
-				} else {
+				if (Input.GetKey (moveDown)) {
+					if (playerState == 4) {
+						transform.position = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y - CLIMB_SPEED);
+						rigidbody2D.Sleep ();
+					}
+				}
+
+				if (playerState == 1 || playerState == 2 || playerState == 3) {
+					if (Input.GetKey (moveRight)) {
+
+							rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
+							if (dir == LEFT) {
+									transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
+									fist.SendMessage ("Flip");
+									dir = RIGHT;
+								
+							}
+					} else if (Input.GetKey (moveLeft)) {
+							rigidbody2D.velocity = new Vector2 (speed * -1, rigidbody2D.velocity.y);
+							if (dir == RIGHT) {
+									fist.SendMessage ("Flip");
+									transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
+									dir = LEFT;
+							}
+					} else {
 						rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);
+					}
 				}
 
-				if (onGround && !Input.GetKey (moveUp)) {
-						canJump = true;
+				if (!Input.GetKey (jumpKey)) {
+						holdingJump = false;
 				}
+
 				if (rigidbody2D.velocity.y < -10) {
 						rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, -10);
 				}
 
-				if (rigidbody2D.velocity.y < 0) {
-						canJump = false;
-						onGround = false;
+				if (playerState == 1 && rigidbody2D.velocity.y < 0) {
+						playerState = 3;
 				}
 
 				if (Input.GetKey (punchKey) && !punching && !fistCoolDown) {
@@ -114,7 +129,7 @@ public class PlayerCroc : MonoBehaviour
 								}
 						}
 				}
-
+				/*
 				RaycastHit2D[] rayCast = Physics2D.RaycastAll (transform.position, new Vector2 (0, -1));
 		if (GameObject.FindGameObjectWithTag ("Berry").layer == 8) {
 						GameObject.FindGameObjectWithTag ("Berry").layer = 12;
@@ -126,19 +141,19 @@ public class PlayerCroc : MonoBehaviour
 				if (rigidbody2D.velocity.y < 0) {
 					if (hit.collider.gameObject.tag == "Berry")GameObject.FindGameObjectWithTag ("Berry").layer = 8;}
 								if (hit.fraction < 1.5) {
-										canJump = true;
+										playerState = 1;
 								} else {
-										canJump = false;
+										playerState = 3;
 								}
 								break;
 						}
 				}
-
-				if (dead) {
+				*/
+				if (playerState == 0) {
 					if ((Time.time - deathTime) > 6) {
-						transform.position = new Vector2 (2.5f, 2.5f);
+						transform.position = new Vector2 (-21.05936f, -0.2536466f);
 						mainMusic.audio.Play ();
-						dead = false;
+						playerState = 2;
 					}
 				}
 		}
@@ -146,7 +161,7 @@ public class PlayerCroc : MonoBehaviour
 		void OnCollisionEnter2D (Collision2D collision)
 		{
 				if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Berry") {
-						onGround = true;
+						playerState = 1;
 						AudioSource.PlayClipAtPoint (hitground, Camera.main.transform.position, 0.5f);
 				}
 		}
@@ -164,8 +179,15 @@ public class PlayerCroc : MonoBehaviour
 								GameObject.FindGameObjectWithTag ("Berry").layer = 8;
 						}
 				}
+				if (other.gameObject.tag == "Vine") {
+					if (playerState == 2 || playerState == 3) {
+						playerState = 4;
+						transform.position = new Vector2 (GameObject.FindGameObjectWithTag("Vine").transform.position.x, gameObject.transform.position.y);
+						rigidbody2D.Sleep();
+					}
+				}
 				if (other.gameObject.tag == "Death") {
-					if (!dead) playerDie();
+					if (playerState > 0) playerDie();
 				}
 	}
 }
