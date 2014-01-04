@@ -11757,7 +11757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f581e47c60f457468d138a095919d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dampTime: .300000012
+  dampTime: .349999994
   target: {fileID: 920430762}
   bound: {fileID: 1236627587}
 --- !u!1 &1298543841
