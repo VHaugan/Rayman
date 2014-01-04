@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: flower
+  m_Name: shroom
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -15,23 +15,8 @@ AnimationClip:
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves:
-  - curve:
-    - time: 0
-      value: {fileID: 21300000, guid: b969fa43b0ea2244f8911a0c73ca1596, type: 3}
-    - time: .0833333358
-      value: {fileID: 21300000, guid: 47ebab3b939379b4eb32a6e883993558, type: 3}
-    - time: .166666672
-      value: {fileID: 21300000, guid: 69e123e37e6f1ed49945d591f4aa1166, type: 3}
-    - time: .25
-      value: {fileID: 21300000, guid: bfd81c72d860d2c4eac61cf47b29b0ce, type: 3}
-    - time: .333333343
-      value: {fileID: 21300000, guid: 9c9f762029daf994bb234f596f0fafa0, type: 3}
-    attribute: m_Sprite
-    path: 
-    classID: 212
-    script: {fileID: 0}
-  m_SampleRate: 12
+  m_PPtrCurves: []
+  m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -39,7 +24,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .416666657
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
