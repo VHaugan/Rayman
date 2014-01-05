@@ -22,6 +22,7 @@ public class PlayerCroc : MonoBehaviour
 		private float speed = 5;
 		private GameObject fist;
 		private GameObject mainMusic;
+		private Collider2D currentVine;
 		private float fistCoolDownStart = 0;
 		private float CLIMB_SPEED = 0.04f;
 		private bool fistCoolDown = false;
@@ -33,6 +34,9 @@ public class PlayerCroc : MonoBehaviour
 		private static int FALLING = 3;
 		private static int CLIMBING = 4;
 		private static int HANGING = 6;
+
+		private static float playerHeight = 2.0183f;
+		private static float vineHeight = 5.24f;
 
 		private void playerDie() {
 			playerState = 0;
@@ -75,34 +79,35 @@ public class PlayerCroc : MonoBehaviour
 				}
 
 				if (Input.GetKey (moveUp)) {
-					if (playerState == CLIMBING) {
+					if (playerState == CLIMBING && (transform.position.y + playerHeight/2) < (currentVine.transform.position.y + vineHeight/2 + 0.1f)) {
 						transform.position = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y + CLIMB_SPEED);
 						rigidbody2D.Sleep ();
 					}
 				}
 
 				if (Input.GetKey (moveDown)) {
-					if (playerState == CLIMBING) {
+					if (playerState == CLIMBING && (transform.position.y - playerHeight/2) > (currentVine.transform.position.y - vineHeight/2 - 0.1f)) {
 						transform.position = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y - CLIMB_SPEED);
 						rigidbody2D.Sleep ();
 					}
 				}
 
-				if (playerState == ON_GROUND || playerState == JUMPING || playerState == FALLING) {
+				if (playerState == ON_GROUND || playerState == JUMPING || playerState == FALLING || playerState == CLIMBING) {
 					if (Input.GetKey (moveRight)) {
-
-							rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
+							if (playerState != CLIMBING) rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
 							if (dir == LEFT) {
 									transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
+									if (playerState == CLIMBING) rigidbody2D.Sleep ();
 									fist.SendMessage ("Flip");
 									dir = RIGHT;
 								
 							}
 					} else if (Input.GetKey (moveLeft)) {
-							rigidbody2D.velocity = new Vector2 (speed * -1, rigidbody2D.velocity.y);
+							if (playerState != CLIMBING) rigidbody2D.velocity = new Vector2 (speed * -1, rigidbody2D.velocity.y);
 							if (dir == RIGHT) {
-									fist.SendMessage ("Flip");
 									transform.localScale = new Vector2 (-transform.localScale.x, transform.localScale.y);
+									if (playerState == CLIMBING) rigidbody2D.Sleep ();
+									fist.SendMessage ("Flip");
 									dir = LEFT;
 							}
 					} else {
@@ -186,8 +191,9 @@ public class PlayerCroc : MonoBehaviour
 						}
 				}
 				if (other.gameObject.tag == "Vine") {
-					if (playerState == JUMPING || playerState == FALLING) {
+					if (playerState == JUMPING || playerState == FALLING || playerState == CLIMBING) {
 						playerState = CLIMBING;
+						currentVine = other;
 						transform.position = new Vector2 (other.transform.position.x, gameObject.transform.position.y);
 						rigidbody2D.Sleep();
 					}
